@@ -1,19 +1,5 @@
-import { Client, Pool } from "pg"
+import { query } from "./db.js"
 
-const client = new Client( {
-	user: "postgres",
-	host: "localhost",
-	database: "my_app",
-	password: "math",
-	port: 5432,
-} )
+const rows = await query( `SELECT now() as time;` )
 
-await client.connect()
-
-const query = `select * from users`
-
-const result = await client.query( query )
-
-console.log( result.rows )
-
-await client.end()
+console.log( rows )

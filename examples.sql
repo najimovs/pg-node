@@ -8,11 +8,19 @@ CREATE DATABASE my_app;
 DROP DATABASE my_app;
 
 -- CREATE TABLE
-CREATE TABLE users (
+CREATE TABLE students (
 	id int,
-	username varchar( 32 ),
-	gender boolean
+	name varchar( 32 ),
+	class int,
+	age int,
+	c_type varchar(1)
 );
+
+INSERT into students
+( id, name, class, age, c_type, gender ) values
+( 1, "andrew", 5, 25, "A", "m" );
+
+-- alter table students add gender varchar(1);
 
 -- SELECT ALL DATA FROM TABLE
 select * from users;
